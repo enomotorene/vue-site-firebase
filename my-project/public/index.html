@@ -23,11 +23,50 @@
   <!-- Custom styles for this template -->
   <link href="css/agency.min.css" rel="stylesheet">
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAMvXCTqy2GX6mo_R0n9MhpphKxWVNC7AI",
+    authDomain: "test-cd613.firebaseapp.com",
+    databaseURL: "https://test-cd613.firebaseio.com",
+    projectId: "test-cd613",
+    storageBucket: "test-cd613.appspot.com",
+    messagingSenderId: "202776491065",
+    appId: "1:202776491065:web:5f0c3fb49242f62c0c89e8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    // Initialize Cloud Firestore through Firebase
+ var db = firebase.firestore();
+db.settings({
+  timestampsInSnapshots: true
+});
+
+ db.collection("users").add({
+    first: "Adasas",
+    last: "Lovelace",
+    born: 1815
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
+</script>
 </head>
 
 <body id="page-top">
   <!-- Navigation -->
   <div id="app"></div>
 </body>
-
+<!-- <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="fb.js"></script> -->
 </html>
